@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="page-container">
+    <div class="login-form-container">
+        <mat-card class="example-card" appearance="outlined">
+            <mat-card-header>
+              <div mat-card-avatar><img src="/assets/user_icon.png" alt="user_img"></div>
+              <mat-card-title>Log in</mat-card-title>
+              <mat-card-subtitle>Please log in to continue</mat-card-subtitle>
+            </mat-card-header>
+           
+            <mat-card-content>
+                <div class="card-content">
+                    <mat-form-field>
+                        <mat-label>Enter your username</mat-label>
+                        <input
+                          matInput
+                          placeholder="employee@example.com"
+                          [formControl]="username"
+                          autocomplete="off"
+                          required
+                        />
+                      </mat-form-field>
+                      <mat-form-field>
+                        <mat-label>Enter your password</mat-label>
+                        <input
+                          matInput 
+                          [formControl]="password" 
+                          type="password"
+                          autocomplete="off"
+                          required
+                        />
+                      </mat-form-field>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+              <button class="login-btn" (click)="login()" mat-button>Log in</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</div>

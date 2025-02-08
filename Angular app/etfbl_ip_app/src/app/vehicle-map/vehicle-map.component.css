@@ -1,0 +1,29 @@
+.map{
+    width:70%;
+}
+.page-container{
+    display:inline-flex;
+    width: 100%;
+    height: 100%;
+}
+.vehicle-select{
+    width:30%;
+    display:flex;
+    justify-content: center;
+    padding-top:5%;
+}
+mat-card{
+    width: 70%;
+    height: fit-content;
+    background-color: aliceblue;
+    height:200px;
+    @media screen and (max-width:1366px){
+        height: 400px;
+    }
+}
+mat-form-field{
+    width: 100%;
+}
+mat-card-title{
+    margin-left: 20px;
+}

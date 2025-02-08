@@ -1,0 +1,28 @@
+.page-container{
+    display:flex;
+    justify-content: center;
+    
+    
+}
+.page-tabs{
+    width:60%;
+    margin-top:100px;
+}
+.deleteBtn{
+    background-color: rgb(235, 62, 62);
+}
+.detailsBtn{
+    background-color: rgb(12, 167, 82);
+}
+.addBtns{
+    background-color: aliceblue;
+    margin-bottom: 20px;
+    @media screen and (max-width:1366px) {
+        display:block;
+    }
+
+}
+.newBtn{
+    margin-right: 30px;
+    border: 1px solid black;
+}

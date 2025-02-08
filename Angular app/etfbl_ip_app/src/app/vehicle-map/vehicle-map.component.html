@@ -1,0 +1,24 @@
+
+<app-header></app-header>
+<div class="page-container">
+    <div class="vehicle-select">
+        <mat-card>
+            <mat-card-title>Select vehicle</mat-card-title>
+            <mat-card-content>
+              <p>Down bellow you can select a vehicle that is currently rented and you will see its start and end location. </p>
+              <mat-form-field >
+                <mat-label>Vehicles</mat-label>
+                <mat-select (selectionChange)="onSelectionChange($event)">
+                  <mat-option *ngFor="let option of rents" [value]="option">
+                    {{ option.vehicleByVehicleIdId }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-card-content>
+          </mat-card>
+    </div>
+    <div id="map" class="map">
+        <p>X</p>
+    </div>
+
+</div>

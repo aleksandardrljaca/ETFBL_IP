@@ -1,0 +1,60 @@
+<div class="mat-elevation-z8">
+    <div class="searchBar-container">
+      <input mat-input [formControl]="searchBar" type="text" placeholder="Search by vehicle ID">
+    </div>
+    <table mat-table [dataSource]="rentsDataSource">
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date</th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+      </ng-container>
+     
+      <ng-container matColumnDef="startTime">
+        <th mat-header-cell *matHeaderCellDef> Start time </th>
+        <td mat-cell *matCellDef="let element"> {{element.startTime}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="endTime">
+        <th mat-header-cell *matHeaderCellDef> End time </th>
+        <td mat-cell *matCellDef="let element"> {{element.endTime}} </td>
+      </ng-container>
+      <ng-container matColumnDef="locationByStartLocation">
+        <th mat-header-cell *matHeaderCellDef> Start location </th>
+        <td mat-cell *matCellDef="let element"> {{element.locationByStartLocationName}} </td>
+      </ng-container>
+      <ng-container matColumnDef="locationByEndLocation">
+        <th mat-header-cell *matHeaderCellDef> End location</th>
+        <td mat-cell *matCellDef="let element"> {{element.locationByEndLocationName}} </td>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price</th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+      </ng-container>
+      <ng-container matColumnDef="clientByClientIdName">
+        <th mat-header-cell *matHeaderCellDef> Client</th>
+        <td mat-cell *matCellDef="let element"> {{element.clientByClientIdFirstname}}   {{element.clientByClientIdLastname}} </td>
+      </ng-container>
+      <ng-container matColumnDef="paymentInfo">
+        <th mat-header-cell *matHeaderCellDef> Payment method</th>
+        <td mat-cell *matCellDef="let element"> {{element.paymentInfo}} </td>
+      </ng-container>
+      <ng-container *ngIf="!isVehicleDetailsPage" matColumnDef="vehicleByVehicleId">
+        <th mat-header-cell *matHeaderCellDef> Vehicle ID</th>
+        <td mat-cell *matCellDef="let element"> {{element.vehicleByVehicleIdId}} </td>
+      </ng-container>
+      <ng-container *ngIf="!isVehicleDetailsPage" matColumnDef="vehicleManufacturer">
+        <th mat-header-cell *matHeaderCellDef> Vehicle manufacturer</th>
+        <td mat-cell *matCellDef="let element"> {{element.vehicleByVehicleIdManufacturerByManufacturerIdName}} </td>
+      </ng-container>
+      <ng-container *ngIf="!isVehicleDetailsPage" matColumnDef="vehicleModel">
+        <th mat-header-cell *matHeaderCellDef> Vehicle model</th>
+        <td mat-cell *matCellDef="let element"> {{element.vehicleByVehicleIdModel}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5]"
+                   showFirstLastButtons
+                   >
+    </mat-paginator>
+  </div>

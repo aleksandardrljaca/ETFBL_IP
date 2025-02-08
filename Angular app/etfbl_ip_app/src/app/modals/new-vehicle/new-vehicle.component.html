@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>Add new {{type}}</h2>
+<mat-dialog-content>
+    <form class="vehicleForm">
+        <mat-form-field>
+          <mat-label>ID</mat-label>
+          <input type="text" matInput [formControl]="id">
+        </mat-form-field>
+        <mat-form-field *ngIf="isCar()" class="example-full-width">
+            <mat-label>Acquisition date</mat-label>
+            <input type="date" matInput [formControl]="acquisitionDate">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Acquisition price</mat-label>
+            <input type="text" matInput [formControl]="acquisitionPrice">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Manufacturer</mat-label>
+            <mat-select [formControl]="manufacturerFormControl">
+              @for (m of manufacturers; track m) {
+            <mat-option [value]="m">{{m.name}}</mat-option>
+          }
+            </mat-select>
+          </mat-form-field>
+          
+          <mat-form-field class="example-full-width">
+            <mat-label>Model</mat-label>
+            <input type="text" matInput [formControl]="model">
+          </mat-form-field>
+          <mat-form-field *ngIf="isCar()" class="example-full-width">
+            <mat-label>Description</mat-label>
+            <input type="text" matInput [formControl]="description">
+          </mat-form-field>
+          <mat-form-field *ngIf="isScooter()" class="example-full-width">
+            <mat-label>Max speed</mat-label>
+            <input type="text" matInput [formControl]="maxSpeed">
+          </mat-form-field>
+          <mat-form-field *ngIf="isBicycle()" class="example-full-width">
+            <mat-label>Range</mat-label>
+            <input type="text" matInput [formControl]="range">
+          </mat-form-field>
+    </form>
+    <div class="upload-section">
+        <input id="image-upload" type="file" (change)="onFileSelected($event)" hidden>
+        <button mat-raised-button color="primary" (click)="triggerFileInput()">Choose File</button>
+        <span *ngIf="selectedFileName">{{ selectedFileName }}</span>
+      </div>
+      
+</mat-dialog-content>
+<mat-dialog-actions style="display:flex;justify-content: right;">
+  <button mat-button mat-dialog-close>Discard</button>
+  <button (click)="onAdd()" mat-button >Add</button>
+</mat-dialog-actions>
+
+  

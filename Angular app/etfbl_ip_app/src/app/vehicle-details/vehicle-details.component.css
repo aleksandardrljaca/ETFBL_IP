@@ -1,0 +1,62 @@
+.page{
+    width:100%;
+    margin-top:50px;
+    display:inline-flex;
+    justify-content: center;
+    @media screen and (max-width:1366px) {
+        display:block;
+    }
+}
+.vehicle-details-container{
+    width:33%;
+    height: fit-content;
+    display:flex;
+    justify-content: center;
+    @media screen and (max-width:1366px) {
+        width:100%;
+    }
+    
+}
+.malfunctions-rents{
+    width:66%;
+    display:inline-block;
+    justify-content: center;
+    border-radius: 10px;
+    @media screen and (max-width:1366px) {
+        width:100%;
+    }
+ 
+
+    
+}
+
+.example-card {
+    max-width: 90%;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.content-divs{
+    display:inline-flex;
+    width: 100%;
+}
+.lbls{
+    width: 50%;
+    display:block;
+}
+.values{
+    width: 50%;
+    display:block;
+}
+.mr-tabs{
+    width:90%;
+    @media screen and (max-width:1366px){
+        max-width: 90%;
+    }
+}
+.malfucntion-add-btn-container{
+    background-color: aliceblue;
+    max-width: 90%;
+}
+.add-malf-btn{
+    border: 1px solid black;
+}

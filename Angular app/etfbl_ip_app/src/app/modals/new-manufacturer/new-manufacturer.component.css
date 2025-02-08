@@ -1,0 +1,9 @@
+.manufacturerForm{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dve kolone */
+    gap: 16px; /* Razmak između elemenata */
+  }
+  
+  mat-form-field {
+    width: 100%; /* Osigurava da polja zauzimaju punu širinu unutar svoje kolone */
+  }

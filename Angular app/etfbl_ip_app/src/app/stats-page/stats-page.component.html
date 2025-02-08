@@ -1,0 +1,69 @@
+<app-header></app-header>
+<div class="page-container">
+<div class="monthly-income-chart">
+  <div>
+    <ngx-charts-bar-vertical
+    [results]="rentIncomePerDays"
+    [xAxisLabel]="dayXLbl" 
+    [yAxisLabel]="dayYLbl" 
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="false"
+    [animations]="true"
+   
+    >
+</ngx-charts-bar-vertical>
+  </div>
+          <div style="margin-top:20px">
+            <mat-card>
+                <mat-card-title>Select month</mat-card-title>
+                <mat-card-content>
+                  <p>Down bellow you can select a month and see total income for each day of the month. </p>
+                  <mat-form-field >
+                    <mat-label>Months</mat-label>
+                    <mat-select (selectionChange)="onSelectionChange($event)">
+                      <mat-option *ngFor="let option of monthsNum" [value]="option">
+                        {{ option.month }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </mat-card-content>
+              </mat-card>
+          </div>
+</div>
+<div class="vehicle-malfunctions-chart">
+  <div>
+    <ngx-charts-bar-vertical
+    [results]="malfunctions"
+    [xAxisLabel]="mXLbl" 
+    [yAxisLabel]="mYLbl" 
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="false"
+    [animations]="true"
+    >
+</ngx-charts-bar-vertical>
+  </div>
+  
+</div>
+<div class="income-by-vehicle-type-chart">
+  <div>
+    <ngx-charts-bar-vertical
+    [results]="rentIncomePerVehicleType"
+    [xAxisLabel]="typeXLbl" 
+    [yAxisLabel]="typeYLbl" 
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="false"
+    [animations]="true"
+    >
+</ngx-charts-bar-vertical>
+  </div>
+</div>
+</div>

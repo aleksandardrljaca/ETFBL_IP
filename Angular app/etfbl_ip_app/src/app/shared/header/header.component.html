@@ -1,0 +1,18 @@
+<header>
+    <img src="assets/logo.png" alt="logo">
+    <div class="container">
+        <div class="menu-container">
+            <button (click)="vehicles()" *ngIf="a||m" mat-button>Vehicles</button>
+            <button (click)="manufacturers()" *ngIf="a||m"  mat-button>Manufacturers</button>
+            <button (click)="users()" *ngIf="a||m" mat-button>Users</button>
+            <button (click)="clients()" *ngIf="m||o" mat-button>Clients</button>
+            <button (click)="malfunctions()" *ngIf="m||o" mat-button>Malfunctions</button>
+            <button (click)="rentals()" *ngIf="m||o" mat-button>Rentals</button>
+            <button (click)="map()" *ngIf="o||m" mat-button>Map</button>
+            <button (click)="statistics()" *ngIf="m" mat-button>Statistics</button>
+            <button (click)="pricing()" *ngIf="m" mat-button>Pricing</button>
+            <button (click)="logout()" *ngIf="a||m||o" mat-button>Log out</button>
+        </div>
+    </div>
+
+</header>

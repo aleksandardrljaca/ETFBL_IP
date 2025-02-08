@@ -1,0 +1,55 @@
+<app-header></app-header>
+<div class="page">
+    <div class="vehicle-details-container">
+        <mat-card class="example-card" appearance="outlined">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{vehicle.manufacturerByManufacturerIdName}} {{vehicle.model}}</mat-card-title>
+              <mat-card-subtitle>{{vehicle.vehicleType}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="image" alt="vehicle img">
+            <mat-card-content>
+              <div class="content-divs">
+                <div class="lbls">
+                  <p>ID:</p>
+                  <p *ngIf="isCar()">Acquisition date:</p>
+                  <p>Acquisition price:</p>
+                  <p>Manufacturer:</p>
+                  <p>Model:</p>
+                  <p>Type:</p>
+                  <p *ngIf="isCar()">Description:</p>
+                  <p *ngIf="isElectricScooter()">Max speed:</p>
+                  <p *ngIf="isElectricBicycle()">Range:</p>
+                </div>
+                <div class="values">
+                  <p>{{vehicle.id}}</p>
+                  <p>{{vehicle.acquisitionDate}}</p>
+                  <p>{{vehicle.acquisitionPrice}}</p>
+                  <p>{{vehicle.manufacturerByManufacturerIdName}}</p>
+                  <p>{{vehicle.model}}</p>
+                  <p>{{vehicle.vehicleType}}</p>
+                  <p *ngIf="isCar()">{{vehicle.description}}</p>
+                  <p *ngIf="isElectricScooter()">{{vehicle.maxSpeed}}</p>
+                  <p *ngIf="isElectricBicycle()">{{vehicle.rangePerCharge}}</p>
+                </div>
+              </div>
+              
+            </mat-card-content>
+          </mat-card>
+          
+    </div>
+    <div class="malfunctions-rents">
+        <div class="mr-tabs">
+          <mat-tab-group>
+            <mat-tab label="Rents">
+              <app-rents></app-rents>
+            </mat-tab>
+            <mat-tab label="Malfunctions">
+              <app-malfunctions></app-malfunctions>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+    </div>
+   
+
+</div>

@@ -1,0 +1,47 @@
+<div class="mat-elevation-z8">
+  <div class="malfucntion-add-btn-container">
+    <button (click)="onAddClick()"  class="add-malf-btn" mat-button>Add malfunction</button>
+    <input  style="border: 1px solid black; margin-left:30px" type="search" matInput [formControl]="searchBar"
+                   placeholder="Search by id" autocomplete="off">
+  </div>
+    <table mat-table [dataSource]="malfDataSource">
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date</th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+      </ng-container>
+     
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef>Time </th>
+        <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+      </ng-container>
+      <ng-container *ngIf="!isVehicleDetailsPage" matColumnDef="vehicleId">
+        <th mat-header-cell *matHeaderCellDef> Vehicle ID</th>
+        <td mat-cell *matCellDef="let element"> {{element.vehicleByVehicleIdId}} </td>
+      </ng-container>
+      <ng-container *ngIf="!isVehicleDetailsPage" matColumnDef="vehicleManufacturer">
+        <th mat-header-cell *matHeaderCellDef> Vehicle manufacturer</th>
+        <td mat-cell *matCellDef="let element"> {{element.vehicleByVehicleIdManufacturerByManufacturerIdName}} </td>
+      </ng-container>
+      <ng-container *ngIf="!isVehicleDetailsPage" matColumnDef="vehicleModel">
+        <th mat-header-cell *matHeaderCellDef> Vehicle model</th>
+        <td mat-cell *matCellDef="let element"> {{element.vehicleByVehicleIdModel}} </td>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+        <button class="deleteBtn" mat-button (click)="delete(element.id)">Delete</button> 
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5]"
+                   showFirstLastButtons
+                   >
+    </mat-paginator>
+  </div>

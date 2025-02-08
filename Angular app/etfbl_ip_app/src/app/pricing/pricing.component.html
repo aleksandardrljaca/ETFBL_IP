@@ -1,0 +1,45 @@
+<app-header></app-header>
+<div class="page-container">
+  <div class="mat-elevation-z8">
+    <div class="add-new-container">
+      <button (click)="onAddClick()"  class="add-price-btn" mat-button>Add new pricing</button>
+    </div>
+      <table mat-table [dataSource]="pricingDataSource">
+        <ng-container matColumnDef="from">
+          <th mat-header-cell *matHeaderCellDef>Min range</th>
+          <td mat-cell *matCellDef="let element"> {{element.minDistance}} </td>
+        </ng-container>
+       
+        <ng-container matColumnDef="to">
+          <th mat-header-cell *matHeaderCellDef>Max range</th>
+          <td mat-cell *matCellDef="let element"> {{element.maxDistance}} </td>
+        </ng-container>
+        <ng-container  matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef>Price</th>
+          <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+       
+        <ng-container matColumnDef="update">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+            <button class="updateBtn" mat-button (click)="update(element.id)">Update</button> 
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+            <button class="deleteBtn" mat-button (click)="delete(element.id)">Delete</button> 
+            </td>
+          </ng-container>
+       
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[5]"
+                     showFirstLastButtons
+                     >
+      </mat-paginator>
+    </div>
+
+</div>

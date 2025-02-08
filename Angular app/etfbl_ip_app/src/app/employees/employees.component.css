@@ -1,0 +1,13 @@
+.add-new-container{
+    background-color: aliceblue;
+}
+.add-employee-btn{
+    border: 1px solid black;
+
+}
+.deleteBtn{
+    background-color: rgb(224, 60, 60);
+}
+.updateBtn{
+    background-color: gray;
+}

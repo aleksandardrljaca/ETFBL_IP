@@ -1,0 +1,22 @@
+.page-container{
+    width: 60%;
+    margin-top: 5%;
+    margin-left: 20%;
+    @media  screen and (max-width:1366px) {
+        margin:0;
+        display:block;
+    }
+}
+.add-new-container{
+    background-color: aliceblue;
+}
+.add-price-btn{
+    border: 1px solid black;
+
+}
+.deleteBtn{
+    background-color: rgb(224, 60, 60);
+}
+.updateBtn{
+    background-color: gray;
+}
