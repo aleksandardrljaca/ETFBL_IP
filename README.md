@@ -7,16 +7,10 @@ The application also provides a user interface for employees (administrators, op
 ## Features
 
 ### Backend (Spring Boot Application)
-- **Vehicle Management**: Stores information about electric cars, bikes, and scooters, including unique identifiers, purchase date, price, manufacturer, model, and additional specific attributes (autonomy, speed, etc.).
-- **Maintenance Tracking**: Records information about vehicle malfunctions, including reasons, timestamps, and whether the vehicle is currently in a malfunctioning state.
-- **User Management**: Manages employees (administrators, operators, and managers) and clients, with roles and profiles for each user.
-- **Rental Process**: Tracks vehicle rentals, including the rental date, location, and rental duration, as well as payment details. Generates invoices as PDF files.
-- **Manufacturer Management**: Stores manufacturer details like name, country, address, and contact information.
-- **Promotions and Announcements**: Allows for the creation of marketing promotions and announcements.
-- **RESTful Services**: Implements RESTful APIs for vehicle management, user management, and rental processes.
-- **RSS Feed**: Exposes an RSS feed for announcements and promotions.
 
-### Employee Application
+
+
+### Employee Application (Angular)
 - **Administrator Pages**:
   - Manage vehicles: Add, remove, and view vehicle details.
   - Upload vehicle data from CSV files.
@@ -33,12 +27,12 @@ The application also provides a user interface for employees (administrators, op
   - View rental statistics (e.g., revenue per day, faults per vehicle).
   - Manage rental prices.
 
-### Client Application
+### Client Application (JSP M2)
 - **User Registration**: Clients can register with their personal details (name, email, phone number, avatar, etc.).
 - **Vehicle Rental**: Clients can rent vehicles (scooters, bikes, cars) by selecting the vehicle, location, and payment method.
 - **Rental Management**: Clients can view and manage their rental history, including the duration and total amount to pay.
 - **Profile Management**: Clients can change their password, deactivate their account, and view their rental history.
 
-### Promotion Creation Application
+### Promotion Creation Application (JSP)
 - **Manager Access Only**: Allows managers to create new promotions and announcements.
 - **Promotions and Announcements**: Create, view, and search for promotions and announcements by content.
