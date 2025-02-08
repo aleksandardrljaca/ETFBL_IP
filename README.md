@@ -36,3 +36,8 @@ The application also provides a user interface for employees (administrators, op
 ### Promotion Creation Application (JSP)
 - **Manager Access Only**: Allows managers to create new promotions and announcements.
 - **Promotions and Announcements**: Create, view, and search for promotions and announcements by content.
+
+# UI
+
+![{DD9B309D-01EC-489B-B2B2-F66A025DB95F}](https://github.com/user-attachments/assets/6732d98d-0951-4679-bb4a-ea6df728010f)
+
